@@ -28,4 +28,10 @@ The goal was to engineer a robust classification system capable of identifying f
 2. Install dependencies: `pip install -r requirements.txt`
 3. Launch the UI: `cd dashboard && streamlit run app.py`
 
+### 📂 Data Source
+The dataset used in this project is the **Credit Card Fraud Detection** dataset from Kaggle. 
+- **Source:** [Kaggle Dataset Link](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud)
+- **Scale:** 284,807 transactions with 30 numerical features ($V1-V28$, Time, and Amount).
+
 ---
+
