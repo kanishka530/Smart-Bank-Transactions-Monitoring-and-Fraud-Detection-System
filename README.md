@@ -1,30 +1,31 @@
-# 🏦 Smart Bank Transaction Monitoring System
-**Status: 🟡 Development Phase (Data Preprocessing)**
+# 🛡️ Financial Fraud Detection: A Multivariate Statistical Approach
 
-A Python-based fraud detection system designed to identify suspicious financial activities and patterns of money laundering (AML) using the ULB Credit Card Fraud dataset.
+### 🎓 Academic Context
+This project was developed during my final semester of **B.Sc. Mathematics** to demonstrate the practical application of Stochastic Modeling and Ensemble Learning in Financial Technology (FinTech).
 
-## 🚀 Project Overview
-This project focuses on identifying fraudulent transactions from a highly imbalanced dataset. It involves Exploratory Data Analysis (EDA), handling class imbalance via undersampling, and implementing machine learning models to ensure transaction integrity.
+### 🚀 Executive Summary
+The goal was to engineer a robust classification system capable of identifying fraudulent credit card transactions within a highly imbalanced dataset (0.17% fraud rate). By prioritizing **Recall** over simple Accuracy, the model ensures maximum security while minimizing customer friction.
 
-## 📁 Dataset Information
-Due to GitHub's **100MB file size limit**, the raw `creditcard.csv` (143.84 MB) is excluded from this repository via `.gitignore`. 
+### 📊 Statistical Results & Optimization
+- **92.8% Recall:** Successfully identified 91 out of 98 fraud cases in the hold-out test set.
+- **13% Precision Optimization:** Transitioned from a Linear Baseline (Logistic Regression) to a **Random Forest Ensemble** (100 Decision Trees). This reduced False Positives by nearly 300 cases, directly improving the "False Alarm" rate for customers.
+- **Data Resampling:** Implemented **Random Under-Sampling** to address class imbalance, creating a balanced 50/50 training distribution to prevent model bias toward the majority class.
 
-**To run this project, please download the dataset from Kaggle:**
-🔗 [Credit Card Fraud Detection Dataset](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud)
+### 🛠️ Tech Stack & Methodology
+- **Languages:** Python (Pandas for data manipulation, NumPy for vectorization)
+- **Machine Learning:** Scikit-Learn (RandomForestClassifier, LogisticRegression)
+- **Evaluation Metrics:** Confusion Matrix analysis, Precision-Recall curves, and F1-Score.
+- **Deployment:** **Streamlit** (Real-time inference dashboard for risk monitoring).
 
-* **Total Transactions:** 284,807
-* **Fraudulent Cases:** 492 (0.172% of total)
-* **Features:** PCA-transformed numerical features (V1-V28), Time, and Amount.
+### 📂 Repository Structure
+- `/data`: Source CSV and processed datasets.
+- `/notebooks`: Exploratory Data Analysis (EDA) and Model Training pipeline.
+- `/dashboard`: Production-ready `app.py` and the serialized `fraud_model.pkl`.
+- `requirements.txt`: Environment configuration for reproducibility.
 
-## 🛠️ Roadmap & Milestones
-- [x] **Project Setup:** Repository architecture and Git configuration.
-- [x] **Data Audit:** Initial EDA and class distribution analysis.
-- [x] **Data Splitting:** 80/20 Train-Test split.
-- [ ] **Class Balancing:** Implementing Undersampling to handle 0.17% fraud ratio.
-- [ ] **Model Building:** Training and evaluating Logistic Regression.
-- [ ] **Dashboard:** Visualizing fraud triggers and threshold reports.
+### 🧪 Execution Instructions
+1. Clone the repository.
+2. Install dependencies: `pip install -r requirements.txt`
+3. Launch the UI: `cd dashboard && streamlit run app.py`
 
-## ⚙️ Setup Instructions
-1. Clone this repository.
-2. Download `creditcard.csv` from the link above and place it in the `/data` folder.
-3. Open `notebook/fraud_analysis.ipynb` to view the analysis.
+---
